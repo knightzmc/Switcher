@@ -5,7 +5,7 @@ Switcher is a tiny CLI used for quick switching between files.
 The intended use case is easy switching between Minecraft server versions,
 but it can also be used as a lightweight backup tool!
 
-##How it works
+## How it works
 Switcher uses and generates 2 main directories in the directory that it is executed in:
 * `current` - This stores the current version of the files used. In the Minecraft use case, this
 would be the current files of the server.
@@ -13,7 +13,7 @@ would be the current files of the server.
  For example, plugins that are not version independent so can be included in any version of the server.
  
  
-##Commands
+## Commands
 Switcher has 2 main commands:
 * `pull` - This pulls a backup into the `current` directory. Switcher overwrites conflicting files,
 but ignores files that are not present in the backup. The command flag `--override | -o` instructs 
@@ -42,7 +42,7 @@ Therefore, a `push` command will look similar to this:
 **Note that files from the `global` directory are not pushed**
 
 
-##Building
+## Building
 
 Switcher uses Gradle, so building is as simple as running
 `./gradlew build` on UNIX/Mac or `gradlew.bat build` on Windows.
