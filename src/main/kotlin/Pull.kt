@@ -18,15 +18,16 @@ class Pull(private val switcher: Switcher) : CliktCommand(name = "pull", help = 
 
     override fun run()
     {
-
-        version.copyAllUnless(switcher.currentDir) {
-            it.name == "version"
-        }
         if (override)
         {
             switcher.currentDir.deleteRecursively()
             switcher.currentDir.mkdir()
         }
+
+        version.copyAllUnless(switcher.currentDir) {
+            it.name == "version"
+        }
+
         switcher.globalDir copyAllTo switcher.currentDir
 
         switcher.currentVersion = version.name
