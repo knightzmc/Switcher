@@ -20,6 +20,10 @@ shadowJar {
     classifier ''
     archiveVersion.set('')
     minimize()
+
+    manifest {
+        attributes "Main-Class" : "MainKt"
+    }
 }
 
 compileKotlin {
