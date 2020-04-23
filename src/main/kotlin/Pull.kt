@@ -12,7 +12,7 @@ class Pull(private val switcher: Switcher) : CliktCommand(name = "pull", help = 
         canBeFile = false
     )
     private val override by option(
-        "-o", "--override",
+        "-o", "--override", "--overwrite",
         help = "If the previous version's files should be deleted"
     ).flag()
 
