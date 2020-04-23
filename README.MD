@@ -47,6 +47,9 @@ Therefore, a `push` command will look similar to this:
 Switcher uses Gradle, so building is as simple as running
 `./gradlew build` on UNIX/Mac or `gradlew.bat build` on Windows.
 
-Switcher also provides a script for using GraalVM to build a native image.
+Switcher also provides a script for using GraalVM to build a native image. 
+
+This provides much faster startup times (although the difference may be negligible) at the cost of a loss of platform independence that the JVM brings.
+ 
 This requires Graal to be installed, and is as simple as running `./build-native.sh`
 in the base directory. The native image will be built in `build/libs`, alongside the jar.
