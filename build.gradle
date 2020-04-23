@@ -23,7 +23,7 @@ dependencies {
 shadowJar {
     baseName 'switcher'
     classifier ''
-    archiveVersion = ''
+    archiveVersion.set('')
     minimize()
 }
 
