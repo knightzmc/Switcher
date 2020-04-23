@@ -20,8 +20,9 @@ class Pull(private val switcher: Switcher) : CliktCommand(name = "pull", help = 
     {
         if (override)
         {
-            switcher.currentDir.deleteRecursively()
-            switcher.currentDir.mkdir()
+            switcher.currentDir.listFiles()?.forEach {
+                it.deleteRecursively()
+            }
         }
 
         version.copyAllUnless(switcher.currentDir) {
