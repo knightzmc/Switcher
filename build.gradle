@@ -21,7 +21,7 @@ dependencies {
 }
 
 shadowJar {
-    baseName 'Switcher'
+    baseName 'switcher'
     classifier ''
     archiveVersion = ''
     minimize()
