@@ -1,3 +1,5 @@
+package me.bristermitten.switcher
+
 enum class Color(private val foregroundCode: Int)
 {
     BLACK(30),

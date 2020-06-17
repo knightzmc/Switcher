@@ -1,3 +1,5 @@
+package me.bristermitten.switcher
+
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.arguments.optional
@@ -27,11 +29,11 @@ class Push(private val switcher: Switcher) :
         }
         val versionDirectory = File(currentVersion)
 
-        switcher.currentDir.copyAllUnless(versionDirectory) {
+        val changeCount = switcher.currentDir.copyAllUnless(versionDirectory) {
             val relativeInGlobalDirectory = switcher.globalDir.resolve(it.relativeTo(it.parentFile))
             it.name == "version" || relativeInGlobalDirectory.exists()
         }
 
-        println("${Color.GREEN}Successfully pushed version $currentVersion")
+        println("${Color.GREEN}Successfully pushed version $currentVersion ${Color.YELLOW}(About $changeCount files changed)${Color.DEFAULT}")
     }
 }

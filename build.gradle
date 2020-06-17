@@ -22,7 +22,7 @@ shadowJar {
     minimize()
 
     manifest {
-        attributes "Main-Class" : "MainKt"
+        attributes "Main-Class" : "me.bristermitten.switcher.MainKt"
     }
 }
 

@@ -1,3 +1,5 @@
+package me.bristermitten.switcher
+
 import com.github.ajalt.clikt.core.CliktCommand
 import java.io.File
 
@@ -17,5 +19,4 @@ class Switcher : CliktCommand()
     }
 
     override fun run() = Unit
-
 }

@@ -1,3 +1,5 @@
+package me.bristermitten.switcher
+
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.flag
@@ -25,15 +27,16 @@ class Pull(private val switcher: Switcher) : CliktCommand(name = "pull", help = 
             }
         }
 
-        version.copyAllUnless(switcher.currentDir) {
+        var counter = 0
+        counter += version.copyAllUnless(switcher.currentDir) {
             it.name == "version"
         }
 
-        switcher.globalDir copyAllTo switcher.currentDir
+        counter += switcher.globalDir.copyAllTo(switcher.currentDir)
 
         switcher.currentVersion = version.name
         switcher.currentDir.resolve("version").writeText(version.name)
 
-        println("${Color.GREEN}Successfully pulled version ${Color.MAGENTA}$version${Color.DEFAULT}")
+        println("${Color.GREEN}Successfully pulled version ${Color.MAGENTA}$version ${Color.YELLOW}(About $counter files changed)${Color.DEFAULT}")
     }
 }
